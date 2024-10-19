@@ -50,6 +50,7 @@ def get_links(): # Function to get the listing URLs
 def scraper(): # Function to scrape the data from the listings
     with open("listing_links.txt", "r") as url_list_file: # Open the file containing the URLs
         for line in url_list_file: # Loop through the URLs
+            time.sleep(3) # Add a delay to avoid overloading the server
             attribute_dict = dict() # Initialize a dictionary to store the attributes
             line = line.strip() # Remove leading and trailing whitespaces from the URL
             if "https" not in line: # Check if the URL is valid
